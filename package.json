@@ -11,6 +11,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource/poppins": "^4.5.10",
+    "@fontsource/twinkle-star": "^4.5.9",
     "astro": "^1.6.10"
   }
 }
