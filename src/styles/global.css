@@ -1,5 +1,5 @@
 html {
-    background-color: #ffffff;
+    background-color: #f6f6f6;
     font-family: 'Poppins', sans-serif;
 
   }
@@ -21,3 +21,48 @@ html {
     margin: 1rem 0;
     font-size: 2.5rem;
   }
+
+  /* nav styles */
+
+.nav-links {
+  width: 100%;
+  top: 5rem;
+  left: 48px;
+  background-color: #1db07a;
+  display: none;
+  margin: 0;
+}
+
+.nav-links a {
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: lowercase;
+}
+
+.nav-links a:hover, a:focus {
+  background-color: #1db07a;
+  font-weight: bold;
+}
+
+.expanded {
+  display: unset;
+}
+
+@media screen and (min-width: 636px) {
+  .nav-links {
+    margin-left: 5em;
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .nav-links a {
+    display: inline-block;
+    padding: 15px 20px;
+  }
+
+}
