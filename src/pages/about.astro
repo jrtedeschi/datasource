@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 const pageTitle = "About Me";
 
@@ -24,55 +25,57 @@ const skills = [
 const skillColor = "navy";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>{pageTitle}</title>
-        <style>
-            h1 {
-              color: var(--skillColor);
-              font-size: 4rem;
-            }
-            .skill {
-                color: var(--skillColor);
-                font-weight: bold;
-            }
-          </style>
-      
-    </head>
-    <body>
-        <Header />
-        <h1>{pageTitle}</h1>
-        <h2>
-            This is my repository of knowledge for data analytics and other
-            skills
-        </h2>
-        <p>
-            This site will update as I learn new things, so keep checking back
-            and see how my journey is going!
-        </p>
-        <p><strong>Here are a few facts about me:</strong></p>
-        <ul>
-            <li>My name is {identity.firstName}.</li>
-            <li>
-                I live in {identity.country} and I work as a {
-                    identity.occupation
-                }.
-            </li>
-            {
-                identity.hobbies.length >= 2 && (
-                    <li>
-                        Two of my hobbies are: {identity.hobbies[0]} and{" "}
-                        {identity.hobbies[1]}
-                    </li>
-                )
-            }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-            {skills.map((skill) => <li class="skill">{skill}</li>)}
-        </ul>
-        <Footer/>
-    </body>
-</html>
+<Layout title="About the Author">
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width" />
+            <title>{pageTitle}</title>
+            <style>
+                h1 {
+                  color: var(--skillColor);
+                  font-size: 4rem;
+                }
+                .skill {
+                    color: var(--skillColor);
+                    font-weight: bold;
+                }
+              </style>
+    
+        </head>
+        <body>
+            <Header />
+            <h1>{pageTitle}</h1>
+            <h2>
+                This is my repository of knowledge for data analytics and other
+                skills
+            </h2>
+            <p>
+                This site will update as I learn new things, so keep checking back
+                and see how my journey is going!
+            </p>
+            <p><strong>Here are a few facts about me:</strong></p>
+            <ul>
+                <li>My name is {identity.firstName}.</li>
+                <li>
+                    I live in {identity.country} and I work as a {
+                        identity.occupation
+                    }.
+                </li>
+                {
+                    identity.hobbies.length >= 2 && (
+                        <li>
+                            Two of my hobbies are: {identity.hobbies[0]} and{" "}
+                            {identity.hobbies[1]}
+                        </li>
+                    )
+                }
+            </ul>
+            <p>My skills are:</p>
+            <ul>
+                {skills.map((skill) => <li class="skill">{skill}</li>)}
+            </ul>
+            <Footer/>
+        </body>
+    </html>
+</Layout>
