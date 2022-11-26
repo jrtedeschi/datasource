@@ -1,10 +1,10 @@
 ---
-title: 'A New Journey Begins'
+title: 'Meet Polars, Pandas older Brother'
 pubDate: 2022-11-18
 description: 'This is my first blog first post'
 author: 'João Tedeschi'
 tags: ["astro","blogging","lifelong learning"]
-layout: ../../layouts/Layout.astro
+layout: ../../layouts/MarkdownPostLayout.astro
 ---
 
 # Pandas gains a new brother

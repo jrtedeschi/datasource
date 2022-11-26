@@ -1,15 +1,9 @@
 ---
-export interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
-import '@fontsource/poppins';
+const { frontmatter } = Astro.props;
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/global.css';
+import '@fontsource/poppins';
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -17,16 +11,18 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<Header />
-		<slot />
-		<Footer />
-		<script>
-			import "../scripts/menu.js"
-		  </script>
-	</body>
+		<title>{frontmatter.title}</title>
+    </head>
+<Header />
+<h1>{frontmatter.title}</h1>
+<p>Written by {frontmatter.author}</p>
+<p>Published on: {frontmatter.pubDate.slice(0,10)}</p>
+
+<slot />
+<Footer />
+<script>
+    import "../scripts/menu.js"
+  </script>
 </html>
 <style is:global>
 	:root {
@@ -42,3 +38,6 @@ import '../styles/global.css';
 			Bitstream Vera Sans Mono, Courier New, monospace;
 	}
 </style>
+
+
+
